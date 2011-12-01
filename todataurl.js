@@ -1,7 +1,5 @@
 Number.prototype.toUInt=function(){ return this<0?this+4294967296:this; };
 Number.prototype.bytes32=function(){ return [(this>>>24)&0xff,(this>>>16)&0xff,(this>>>8)&0xff,this&0xff]; };
-Number.prototype.bytes32sw=function(){ return [this&0xff,(this>>>8)&0xff,(this>>>16)&0xff,(this>>>24)&0xff]; };
-Number.prototype.bytes16=function(){ return [(this>>>8)&0xff,this&0xff]; };
 Number.prototype.bytes16sw=function(){ return [this&0xff,(this>>>8)&0xff]; };
 
 Array.prototype.adler32=function(start,len){
