@@ -75,7 +75,7 @@ Array.prototype.crc32=function(start,len){
 	HTMLCanvasElement.prototype.toDataURL=function(type){
 
 			var res=tdu.apply(this,arguments);
-			if(res.substr(0,6)=="data:,"){
+			if(res == "data:,"){
 				HTMLCanvasElement.prototype.toDataURL=toDataURL;
 				return this.toDataURL();
 			}else{
