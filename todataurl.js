@@ -67,7 +67,7 @@ Array.prototype.crc32=function(start,len){
 
 		stream.push(0x00,0x00,0x00,0x00,0x49,0x45,0x4e,0x44);
 		Array.prototype.push.apply(stream, stream.crc32(stream.length-4, 4).bytes32() );
-		return "data:image/png;base64,"+btoa(String.fromCharCode.apply(null,stream));
+		return "data:image/png;base64,"+btoa(stream.map(function(c){ return String.fromCharCode(c); }).join(''));
 	};
 	
 	var tdu=HTMLCanvasElement.prototype.toDataURL;
